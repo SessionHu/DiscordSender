@@ -32,7 +32,7 @@
 
 ## 声明
 
-- 本项目使用`MIT License'许可证
+- 本项目使用`MIT License`许可证
 
 - 使用本项目造成的后果XhuOffice及作者均不负责
 
