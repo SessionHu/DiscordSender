@@ -8,12 +8,15 @@ times = Inputbox ("How many times would you like to send? " , "Discord Sender" ,
 Info = InputBox ("What is the message you want to send?" , "Discord Sender" , "")
 '收集将要发送的信息与次数
 
+Ws.run "MsHta vbscript:ClipBoardData.SetData("+""""+"text"+""""+","+""""&Info&""""+")(close)" , 0 , true
+'复制‘Info’到剪贴板
+
 WScript.Sleep 1000          '停止1000ms，用于切换窗口
 
 For i = 1 To times          '循环直到i=times
 
 Ws.SendKeys "{ENTER}"       '发送上一条尚未发送的消息
-Ws.SendKeys Info            '输入‘Info’里面的内容
+Ws.SendKeys "^V"            '粘贴剪贴板最新的内容
 Ws.SendKeys "{ENTER}"       '这里和下面的按下回车键都是用于发送消息以及处理速度过快弹窗
 WScript.Sleep 50
 Ws.SendKeys "{ENTER}"
